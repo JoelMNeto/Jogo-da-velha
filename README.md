@@ -25,7 +25,7 @@ O jogo começa pedindo para o primeiro jogador escolher 'X' ou 'O'. Com a escolh
 <br>
 
 <div align="center">
-  <img src="assets/jogoDaVelhaVencedor.png" alt="Posicionando navio" width="686">
+  <img src="assets/jogoDaVelhaVencedor.png" alt="Jogo da velha" width="686">
 </div>
 
 <br>
