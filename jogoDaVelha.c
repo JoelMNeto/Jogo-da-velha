@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <locale.h>
 
 void limpaTela();
 void mostraJogo(char casa1, char casa2, char casa3, char casa4, char casa5, char casa6, char casa7, char casa8, char casa9);
@@ -9,6 +10,8 @@ int validaJogada(char *casa1, char *casa2, char *casa3, char *casa4, char *casa5
 int verificaVencedor(char casa1, char casa2, char casa3, char casa4, char casa5, char casa6, char casa7, char casa8, char casa9, char jogador1, char jogador2);
 
 int main(){
+    setlocale(LC_ALL, "Portuguese_Brazil");
+
     char casa1 = '1', casa2 = '2', casa3 = '3',
          casa4 = '4', casa5 = '5', casa6 = '6', casa7 = '7',
          casa8 = '8', casa9 = '9', jogador1, jogador2,
@@ -34,7 +37,7 @@ int main(){
         getchar();
 
         while((jogador1 != 'X') && (jogador1 != 'O')){
-            printf("\n\t\tOPCAO INVALIDA, POR FAVOR ESCOLHA [X] OU [O]: ");
+            printf("\n\t\tOPÇÃO INVÁLIDA, POR FAVOR ESCOLHA [X] OU [O]: ");
             scanf("%c", &jogador1);
 
             getchar();
@@ -50,13 +53,13 @@ int main(){
 
         printf("\n\t\tO JOGADOR 2 FICOU COM [%c]\n ", jogador2);
 
-        printf("\t\tVAMOS COMECAR!\n\n");
+        printf("\t\tVAMOS COMEÇAR!\n\n");
 
         mostraJogo(casa1, casa2, casa3, casa4, casa5, casa6, casa7, casa8, casa9);
 
         do{
 
-            printf("\n\n\t\tJOGADOR 1, SUA VEZ DE JOGAR [DIGITE UM NUMERO DE 1 A 9 PARA JOGAR]: ");
+            printf("\n\n\t\tJOGADOR 1, SUA VEZ DE JOGAR [DIGITE UM NÚMERO DE 1 A 9 PARA JOGAR]: ");
             scanf("%c", &jogada);
             printf("\n\n");
 
@@ -69,7 +72,7 @@ int main(){
             while(jogadaValida == 1){
                 mostraJogo(casa1, casa2, casa3, casa4, casa5, casa6, casa7, casa8, casa9);
 
-                printf("\n\n\t\tESCOLHA OUTRA CASA [DIGITE UM NUMERO DE 1 A 9]: ");
+                printf("\n\n\t\tESCOLHA OUTRA CASA [DIGITE UM NÚMERO DE 1 A 9]: ");
                 scanf("%c", &jogada);
                 printf("\n\n");
 
@@ -89,7 +92,7 @@ int main(){
                 break;
             }
         
-            printf("\n\n\t\tJOGADOR 2, SUA VEZ DE JOGAR [DIGITE UM NUMERO DE 1 A 9 PARA JOGAR]: ");
+            printf("\n\n\t\tJOGADOR 2, SUA VEZ DE JOGAR [DIGITE UM NÚMERO DE 1 A 9 PARA JOGAR]: ");
             scanf("%c", &jogada);
             printf("\n\n");
 
@@ -102,7 +105,7 @@ int main(){
             while(jogadaValida == 1){
                 mostraJogo(casa1, casa2, casa3, casa4, casa5, casa6, casa7, casa8, casa9);
 
-                printf("\n\n\t\tESCOLHA OUTRA CASA [DIGITE UM NUMERO DE 1 A 9]: ");
+                printf("\n\n\t\tESCOLHA OUTRA CASA [DIGITE UM NÚMERO DE 1 A 9]: ");
                 scanf("%c", &jogada);
                 printf("\n\n");
 
@@ -121,9 +124,9 @@ int main(){
         } while(vencedor == 0);
 
         if(vencedor == 1){
-            printf("\n\n\t\t VITORIA DO JOGADOR 1!\n");
+            printf("\n\n\t\t VITÓRIA DO JOGADOR 1!\n");
         } else if(vencedor == 2){
-            printf("\n\n\t\t VITORIA DO JOGADOR 2!\n");
+            printf("\n\n\t\t VITÓRIA DO JOGADOR 2!\n");
         } else if(vencedor == 3){
             printf("\n\n\t\t DEU VELHA.\n");
         }
@@ -186,7 +189,7 @@ void registraJogada(char *casa1, char *casa2, char *casa3, char *casa4, char *ca
             *casa9 = jogador;
 
             if(jogada != '9'){
-                printf("\n\n\t\tJOGADA INVALIDA, REGISTRADA NA CASA 9.\n\n");
+                printf("\n\n\t\tJOGADA INVÁLIDA, REGISTRADA NA CASA 9.\n\n");
             }
 
             break;
@@ -234,7 +237,7 @@ int validaJogada(char *casa1, char *casa2, char *casa3, char *casa4, char *casa5
         case '1':
             
             if(*casa1 == 'X' || *casa1 == 'O'){
-                printf("\n\n\t\tJOGADA INVALIDA, A CASA 1 NAO ESTA VAZIA!\n\n");
+                printf("\n\n\t\tJOGADA INVÁLIDA, A CASA 1 NÃO ESTÁ VAZIA!\n\n");
                 return 1;
             }
 
@@ -242,7 +245,7 @@ int validaJogada(char *casa1, char *casa2, char *casa3, char *casa4, char *casa5
         case '2':
 
             if(*casa2 == 'X' || *casa2 == 'O'){
-                printf("\n\n\t\tJOGADA INVALIDA, A CASA 2 NAO ESTA VAZIA!\n\n");
+                printf("\n\n\t\tJOGADA INVÁLIDA, A CASA 2 NÃO ESTÁ VAZIA!\n\n");
                 return 1;
             }
 
@@ -250,7 +253,7 @@ int validaJogada(char *casa1, char *casa2, char *casa3, char *casa4, char *casa5
         case '3':
             
             if(*casa3 == 'X' || *casa3 == 'O'){
-                printf("\n\n\t\tJOGADA INVALIDA, A CASA 3 NAO ESTA VAZIA!\n\n");
+                printf("\n\n\t\tJOGADA INVÁLIDA, A CASA 3 NÃO ESTÁ VAZIA!\n\n");
                 return 1;
             }
 
@@ -258,7 +261,7 @@ int validaJogada(char *casa1, char *casa2, char *casa3, char *casa4, char *casa5
         case '4':
 
             if(*casa4 == 'X' || *casa4 == 'O'){
-                printf("\n\n\t\tJOGADA INVALIDA, A CASA 4 NAO ESTA VAZIA!\n\n");
+                printf("\n\n\t\tJOGADA INVÁLIDA, A CASA 4 NÃO ESTÁ VAZIA!\n\n");
                 return 1;
             }
 
@@ -266,7 +269,7 @@ int validaJogada(char *casa1, char *casa2, char *casa3, char *casa4, char *casa5
         case '5':
             
             if(*casa5 == 'X' || *casa5 == 'O'){
-                printf("\n\n\t\tJOGADA INVALIDA, A CASA 5 NAO ESTA VAZIA!\n\n");
+                printf("\n\n\t\tJOGADA INVÁLIDA, A CASA 5 NÃO ESTÁ VAZIA!\n\n");
                 return 1;
             }
 
@@ -274,7 +277,7 @@ int validaJogada(char *casa1, char *casa2, char *casa3, char *casa4, char *casa5
         case '6':
             
             if(*casa6 == 'X' || *casa6 == 'O'){
-                printf("\n\n\t\tJOGADA INVALIDA, A CASA 6 NAO ESTA VAZIA!\n\n");
+                printf("\n\n\t\tJOGADA INVÁLIDA, A CASA 6 NÃO ESTÁ VAZIA!\n\n");
                 return 1;
             }
 
@@ -282,7 +285,7 @@ int validaJogada(char *casa1, char *casa2, char *casa3, char *casa4, char *casa5
         case '7':
             
             if(*casa7 == 'X' || *casa7 == 'O'){
-                printf("\n\n\t\tJOGADA INVALIDA, A CASA 7 NAO ESTA VAZIA!\n\n");
+                printf("\n\n\t\tJOGADA INVÁLIDA, A CASA 7 NÃO ESTÁ VAZIA!\n\n");
                 return 1;
             }
 
@@ -290,7 +293,7 @@ int validaJogada(char *casa1, char *casa2, char *casa3, char *casa4, char *casa5
         case '8':
 
             if(*casa8 == 'X' || *casa8 == 'O'){
-                printf("\n\n\t\tJOGADA INVALIDA, A CASA 8 NAO ESTA VAZIA!\n\n");
+                printf("\n\n\t\tJOGADA INVÁLIDA, A CASA 8 NÃO ESTÁ VAZIA!\n\n");
                 return 1;
             }
 
@@ -298,7 +301,7 @@ int validaJogada(char *casa1, char *casa2, char *casa3, char *casa4, char *casa5
         default:
 
             if(jogada == '9' && (*casa9 == 'X' || *casa9 == 'O')){
-                printf("\n\n\t\tJOGADA INVALIDA, A CASA 9 NAO ESTA VAZIA!\n\n");
+                printf("\n\n\t\tJOGADA INVÁLIDA, A CASA 9 NÃO ESTÁ VAZIA!\n\n");
                 return 1;
             }
 
