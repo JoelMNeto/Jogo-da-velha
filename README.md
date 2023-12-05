@@ -5,7 +5,7 @@
 <br>
 
 <div align="center">
-  <img src="assets/jogoDaVelha" alt="Início do jogo" width="686">
+  <img src="assets/jogoDaVelha.png" alt="Início do jogo" width="686">
 </div>
 
 <br>
@@ -25,7 +25,7 @@ O jogo começa pedindo para o primeiro jogador escolher 'X' ou 'O'. Com a escolh
 <br>
 
 <div align="center">
-  <img src="assets/jogoDaVelhaVencedor" alt="Posicionando navio" width="686">
+  <img src="assets/jogoDaVelhaVencedor.png" alt="Posicionando navio" width="686">
 </div>
 
 <br>
